@@ -17,7 +17,7 @@ function capitalize(str) {
         words = words.push(word);
     }
     return words.join(' ')
-
+}
     // 2nd Solution Here we have to assume 1st character to be character
 //     let result = str[0].toUpperCase();
 //     for (let i = 1; i < str.length; i++){

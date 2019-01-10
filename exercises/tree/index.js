@@ -42,7 +42,7 @@ class Tree {
         }
     }
 
-    traverseDF(fn) {
+    traverseDF(fn) { // Pre order traversal
         let array = [this.root];
         while(array.length){
             let firstElement = array.shift();
