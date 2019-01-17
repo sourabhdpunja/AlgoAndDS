@@ -105,6 +105,7 @@ class BinarySearchTree {
         return list;
     }
 
+    
     DFSInorder() {
         return traverseInorder(this.root, [])
     }
@@ -117,6 +118,41 @@ class BinarySearchTree {
         return traversePostorder(this.root, [])
     }
 }
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[]}
+ */
+// Iterative solution for inordertraversal
+var inorderTraversal = function(root) {
+    var stack = []
+    var list = []
+    if (!root) {
+        return stack
+    }
+    var current = root.left
+    stack = [root]
+    while (current || stack.length){    
+        while(current){
+            stack.push(current)
+            current = current.left
+        }
+        
+        current = stack.pop()
+        list.push(current.val)
+        current = current.right
+    }
+    
+    return list
+}
+
 
 function traverseInorder(node, list){
     if (node.left){
@@ -177,4 +213,39 @@ function traverse(node) {
   tree.left = node.left === null ? null : traverse(node.left);
   tree.right = node.right === null ? null : traverse(node.right);
   return tree;
+}
+
+
+
+
+
+/// LEET CODE SOLUTION
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[]}
+ */
+var inorderTraversal = function(root) {
+    if(!root)
+       return [];
+   else
+       return traverseInorder(root, []);
+};
+
+function traverseInorder(node, list){
+   if (node.left){
+       traverseInorder(node.left, list);
+   }
+   list.push(node.val)
+   if (node.right){
+       traverseInorder(node.right, list);
+   }
+   
+   return list
 }

@@ -27,13 +27,13 @@ function anagrams(stringA, stringB) {
 }
 
 // function cleanString(str) {
-//     return str.replace('/[^\w]/g',"").toLowerCase().split('').sort().join('');
+//     return str.replace(/[^\w]/g,"").toLowerCase().split('').sort().join('');
 // }
 
 function buildCharMap(str){
     var charMap = {};
 
-    for (let char of str.replace('/[^\w]/g','').toLowerCase()) {
+    for (let char of str.replace(/[^\w]/g,'').toLowerCase()) {
         charMap[char] = charMap[char] + 1 || 1;
     }
 
