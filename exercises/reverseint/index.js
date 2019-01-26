@@ -19,7 +19,7 @@ function reverseInt(n) {
     // console.log(x * sign);
 
     // Better Solution
-    const reversed = n.toString().str('').reverse().join('');
+    const reversed = n.toString().split('').reverse().join('');
     return parseInt(reversed) * Math.sign(n)
 
 }

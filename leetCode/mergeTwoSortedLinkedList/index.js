@@ -20,6 +20,26 @@ Output: 1->1->2->3->4->4
  * @return {ListNode}
  */
 
+
+ //Better Solution for Merge List
+
+ var mergeTwoLists = function(l1, l2) {
+    let dummyHead = new ListNode(0)
+    let curr = dummyHead
+    while (l1 && l2){
+        if (l1.val > l2.val) {
+            curr.next = l2
+            l2 = l2.next
+        } else {
+            curr.next = l1
+            l1 = l1.next
+        }
+        curr = curr.next 
+    }
+    if (l1 != null) curr.next = l1;
+    if (l2 != null) curr.next = l2;
+    return dummyHead.next
+};
  //My Solution needs Space complexity
 var mergeTwoLists = function(l1, l2) {
     

@@ -1,4 +1,12 @@
+/*
+Count the number of prime numbers less than a non-negative number, n.
 
+Example:
+
+Input: 10
+Output: 4
+Explanation: There are 4 prime numbers less than 10, they are 2, 3, 5, 7.
+*/
 //O(n log log n) 
 // https://stackoverflow.com/questions/16472012/what-would-cause-an-algorithm-to-have-olog-log-n-complexity
 // https://stackoverflow.com/questions/2582732/time-complexity-of-sieve-of-eratosthenes-algorithm
