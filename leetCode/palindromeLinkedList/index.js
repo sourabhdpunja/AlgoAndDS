@@ -94,5 +94,4 @@ var isPalindrome = function(head) {
         anotherCurrent = anotherCurrent.next
     }
     return true
-    
 };

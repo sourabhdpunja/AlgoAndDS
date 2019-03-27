@@ -1,5 +1,5 @@
 class Node {
-    constructor(value){
+    constructor(value) {
         this.left = null;
         this.right = null;
         this.value = value
@@ -95,7 +95,7 @@ class BinarySearchTree {
         while(stack.length) {
             currentNode = stack.shift()
             list.push(currentNode.value)
-            if (current.right){
+            if (currentNode.right){
                 stack.unshift(currentNode.right)
             }
             if (currentNode.left){

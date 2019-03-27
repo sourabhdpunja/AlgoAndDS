@@ -1,20 +1,27 @@
 
-
-function slowFib(n){
-    if (n<2){
-        return n
+// Slow Version
+function fibonacci(n) { //O(2^n)
+  
+    if (n < 2) {
+      return n
     }
-    return fib(n-1) + fib(n-2)
-}
+    return fibonacci(n-1) + fibonacci(n-2);
+  }
 
-function memoizedFib(){
-    let cache = {}
+// Faster Version
+function fibonacciMaster() { //O(n)
+    let cache = {};
     return function fib(n) {
-        if (n in cache){
-            return cache[n];
+      if (n in cache) {
+        return cache[n];
+      } else {
+        if (n < 2) {
+          return n;
         } else {
-            cache[n] = slowFib(n)
-            return cache[n]
+          cache[n] = fib(n-1) + fib(n-2);
+          return cache[n];
         }
+      }
     }
-}
+  }
+  

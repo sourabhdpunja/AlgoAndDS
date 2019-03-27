@@ -23,7 +23,7 @@ function memoizeAddTo80(n) {
 // console.log(2, memoizeAddTo80(6))
 
 // let's make that better with no global scope. This is closure in javascript so.
-function memoizeAddTo80(n) { 
+function memoizeAddTo80() { 
   let cache = {};
   return function(n) {
     if (n in cache) {
