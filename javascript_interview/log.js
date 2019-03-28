@@ -1,7 +1,7 @@
 var num = 50;
 
 function logNumber() {
-    console.log(num);
+    console.log(num); // undefined
     var num = 100;
 }
 
