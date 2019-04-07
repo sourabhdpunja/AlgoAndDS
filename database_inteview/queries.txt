@@ -1,0 +1,28 @@
+CREATE TABLE `lectures`.`developer` (
+`id` INT NOT NULL AUTO_INCREMENT,
+`username` VARCHAR(45) NOT NULL,
+`password` VARCHAR(45) NOT NULL,
+`firstName` VARCHAR(45) NULL,
+`lastName` VARCHAR(45) NULL,
+PRIMARY KEY (`id`),
+INDEX `developer_id_INDEX` (`id` ASC),
+UNIQUE INDEX `developer_username_UNIQUE` (`username` ASC)
+);
+
+INSERT statement::
+INSERT INTO table_name (col1, col2, col3, ...) VALUES(value1, value2, value3, ...)
+
+Insert into persons values (4, 'Boone', 'Daniel', '2 Mill ln', 'Dracut')
+Insert into persons(pid, lastname, firstname) values (4, 'Boone', 'Daniel')
+
+
+delete all rows
+DELETE FROM table_name
+DELETE * FROM table_name
+
+delete some rows that match criteria 
+DELETE FROM table_name WHERE some_column=some_value
+
+Update statement::
+UPDATE table_name SET column1 = value, column2 = value2 WHERE some_column=some_value
+UPDATE Persons SET Address='45 Groton Rd', City='Lowell' WHERE Lastname = 'Norton' AND Firstname = 'Edward'

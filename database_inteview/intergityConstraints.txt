@@ -1,0 +1,9 @@
+constarint is a of enforcing rules in db and it maintains integrity of the database.
+NOT NULL, UNIQUE, PRIMARY KEY, FORIEGN KEY, DEFAULT
+
+CASCADE constraint:: Used to drop all the referential integrity constraint that refer to primary and uinque keys in the dropped table. If you omit this clause and the table has referential integrity constriant then the db returns an error and does not drop the table.
+ON DELETE CASCADE:: a foriegn key with on cascade delete means that if a record in the parent table is deleted, then the corressponding records in a child table is automatically deleted.
+
+BEFORE triggers are executed first. Then constraints are fired . Then AFTER triggers are executed.
+
+Sequence :: A db object that auto generates continous unique numbers.

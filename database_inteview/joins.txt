@@ -1,0 +1,24 @@
+Inner Join::
+inner joins returns all the rows from multiple tables where join condition is met.
+Select p.lastname, p.firstname, o.orderno from Persons p INNER JOIN Orders o ON p.Pid = o.Pid
+
+Left outer join::
+Returns all the rows from left hand table and only those rows which match the join condition from right hand table.
+Select p.lastname, p.firstname, o.orderno from Persons p LEFT JOIN Orders o ON p.Pid = o.Pid
+
+Full Outer Join::
+Returns all the rows from left hand table and right hand table with nulls for non matching column values in both tables.
+Select p.lastname, p.firstname, o.orderno from Persons p FULL JOIN Orders o ON p.Pid = o.Pid
+
+self join?
+A self join is a join which a table is joined with itself.
+
+1. Getting details about employee and his manager.
+select e1.ename as employee_name, e2.ename as manager_name from emp e1, emp e2 where e1.mgr = e2.empno
+
+If there is no join condition then cartesion product (cross join) is done. each is paired with each row in second table.
+select s.*, d.* from Student s, dept d
+
+Two ways of writing joins::
+1. select s.name, k.prof from (Student s join enroll e on s.sid = e.sid) join section k on e.sid = k.sid;
+2. select s.name, k.prof from student s, enroll e, section k where s.sid = e.sid and e.sid= k.sid

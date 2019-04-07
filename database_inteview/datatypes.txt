@@ -1,0 +1,8 @@
+CHAR, VARCHAR, NUMBER, LONG, TIMESTAMP, DATE, CLOB
+
+No boolean datatype in oracle db.
+
+Date :: stores month, day, year, century, hours, minutes, seconds.
+Timestamp:: much more finegrained measurement of time till milliseconds. Timestamp can store timezone.
+
+composite datatype:: A composite datatype could be a record, table, nested table or a varray.

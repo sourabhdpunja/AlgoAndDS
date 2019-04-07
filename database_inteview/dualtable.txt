@@ -1,0 +1,46 @@
+What is a dual table? Why do we need it?
+The DUAL table is a special one-row, one-column table present by default in Oracle and other database installations. In Oracle, the table has a single VARCHAR2(1) column called DUMMY that has a value of 'X'. 
+It is suitable for use in selecting a pseudo column such as SYSDATE or USER.
+It can be used to perform arithmatic calculations like 12 * 10
+It can be used for sequence generation.
+
+can we insert more rows into dual table?
+Yes
+
+select USER from dual;
+select SYSDATE from dual;
+select 12*10 from dual;
+
+insert into dual values ('Y') ==> should be an adminsitrator
+
+Can we create a table based on a existing table? or what is the easiest way to backup a table?
+CTAS(create table as)
+CREATE TABLE SALES1 AS SELECT * from sales; 
+
+Can we drop all the columns from a table?
+No we cannot. We get an error.
+
+What are pseudo columns? 
+A pseudo column behaves like a table column but not actually stored in a table.
+You can select from pseudo columns but you cannot do CUD on them.
+SYSDATE
+ROWID
+ROWNUM
+CURRVAL
+
+What is the difference between count(1), count(*)?
+Nothing they are the same. They do the same thing.
+The SQL COUNT function is an aggregate function that returns the number of rows returned by a query.
+The COUNT(*) function returns the number of rows in a table including the rows that contain the NULL values.
+SELECT 
+    COUNT(*)
+FROM
+    employees;
+
+SELECT
+    department_id,
+    COUNT(*)
+FROM
+    employees
+GROUP BY
+    department_id;

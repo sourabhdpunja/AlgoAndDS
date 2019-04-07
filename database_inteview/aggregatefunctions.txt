@@ -1,0 +1,37 @@
+DISTINCT :: Returns distinct values
+Select DISTINCT City from persons
+LIKE :: Used to match a string to a pattern
+Select * from persons where city like 'Io%'
+AS:: To differentiate between fields with same name.
+select s.name AS s1_name, d.name AS s2_name from Student s, dept d
+
+GROUP BY:: group by clause works with aggregate functions. 
+select column_name, agg_func(column_name) from table_name where column_name operator value GROUP BY column_name
+select customer, SUM(OrderPrice) FROM orders GROUP BY customer
+
+Group by is
+– Evaluated after where clause
+– Before select clause
+Cant have aggregation functions in where clause because records have not yet been grouped
+
+Difference between having and where clause?
+where is used to filter out the data before the aggregation takes place.
+having is used to filter out the data after the aggregation takes place.
+
+select dept_id, sum(salary) as salary from employees where dept_id IN (10,20,30) group by dept_id having sum(salary) > 1000;
+
+SELECT Customer,SUM(OrderPrice) FROM Orders
+GROUP BY Customer
+HAVING SUM(OrderPrice) < 2000
+
+ORDER BY keyword sorts results by a column
+• By default records are sorted ASCending
+• Use DESC keyword to sort records in descending
+order
+• Syntax
+SELECT column_name(s)
+FROM table_name
+ORDER BY column_name(s) ASC|DESC
+
+SELECT * FROM Persons
+ORDER BY LastName

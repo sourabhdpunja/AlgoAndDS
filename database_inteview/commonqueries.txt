@@ -1,0 +1,4 @@
+AND :: for using multiple columns in where clause. 
+eg. select * from persons where firstname = 'Bob' AND LastName = 'Dole'
+OR :: for using multiple columns in where clause. 
+eg. select * from persons where firstname = 'Bob' OR LastName = 'Dole'

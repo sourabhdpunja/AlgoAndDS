@@ -1,0 +1,14 @@
+Indexes are datastructures used by oracle for faster data retrival.
+Function based index => CREATE INDEX first_name_idx on CUSTOMER(UPPER(first_name))
+Bitmap index
+Btree index
+
+Partitioning the tables::
+There are many benefits of partitioning large tables. You can speed up loading and archiving of data, you can perform maintenance operations on individual partitions instead of the whole table, and you may be able to improve query performance.
+
+Table partitioning is a way to divide a large table into smaller, more manageable parts without having to create separate tables for each part. Data in a partitioned table is physically stored in groups of rows called partitions and each partition can be accessed and maintained separately. Partitioning is not visible to end users, a partitioned table behaves like one logical table when queried.
+
+Optimization :: 
+1. you generate an execution plan on the sql statement using the EXPLAIN PLAN 
+2. Now check the execution plan;
+3. Check if FULL Scan is used or a index range scan ios used. If not used index then use indexes.

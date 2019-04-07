@@ -1,0 +1,11 @@
+substr() :: used to extract substring from a strings
+instr() :: used to return location of substring in a string
+
+Conversion functions:: typecast data from one datatype to other.
+TO_CHAR, TO_NUMBER, TO_DATE
+
+Date functions:: ADD_MONTHS
+Add one month to sysdate:: select ADD_MONTHS(sysdate, 1) from dual.
+NOW(), CURDATE(), DATE()
+
+Any artithmetic ops on Null is null 

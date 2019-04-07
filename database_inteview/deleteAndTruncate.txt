@@ -1,0 +1,22 @@
+Difference between delete and truncate? which is faster?
+
+Delete command is used to selectively remove rows from a table using a where clause. If no where condition is 
+specified all rows are removed.
+
+After performing a DELETE opertation you need to commit or rollback the transaction to make the changes permenant or undo it.
+
+DELETE triggers on the table are fired if there are any triggers.
+
+TRUNCATE removes all the rows from a table. You cannot roll back the data.
+It does not affect any of the tables indexes, triggers or dependencies.
+Since no UNDO log is maintained and has no dependencies TRUNCATE is faster.
+
+where condition cannot be used with truncate.
+
+Can we delete a record from more than one table simultaneously?
+Yes
+Delete t1,t2 from inner join t2 where t1.id = t2.id  and t2.id = t3.id
+
+How to delete duplicate records?
+use rowid to duplicate record.
+

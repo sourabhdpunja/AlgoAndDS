@@ -1,0 +1,24 @@
+What is the difference between IN and = operator?
+= accepts only one value
+IN operator accepts more than 1 value
+Select employee_id, dept from employees where dept_id = 10
+Select employee_id, dept from employees where dept_id IN (100, 200)
+
+How many maximum number of values can a IN operator take?
+999
+
+Difference between IN and EXIST when using in sub queries?
+IN:: The inner query is executed first and the list of values obtained is used by the outer query.
+Select emp_id, dept_id from employees where dept_id IN (select dept_id from dept);
+
+The EXISTS operator is a logical operator that allows you to check whether a subquery returns any row. The EXISTS operator returns TRUE if the subquery returns one or more row.
+Every row from the outer query is selected, then the inner query is executed and the outer query output uses the result for checking.
+
+This process of inner query execution repeats as many number of times as there are outer query rows.
+
+SELECT *
+FROM customers
+WHERE EXISTS 
+  (SELECT *
+   FROM orders
+   WHERE customers.customer_id = orders.customer_id);
